@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Strage Site</title> 
+    <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+<header>
+    Strange Site
+</header>
+
+<div id="footer">
+    <p class="marquee">
+        <span id="dtText"></span>
+    </p>
+</div>
+
+<script>
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date + ' ' + time;
+
+    document.getElementById("dtText").innerHTML = dateTime;
+</script>
+
+<div class="wrapper">
+    <img id="popcat" src="./assets/pictures/pop-cat-1.jpg" alt="Invalid" >
+    <script type="text/javascript">
+        
+            var img = document.getElementById("popcat");
+        var audio1 = new Audio("./assets/sound/pop.mp3");
+        var audio2 = new Audio("./assets/sound/close.mp3");
+
+            img.addEventListener('mousedown',
+                function() {
+                    img.src = "./assets/pictures/pop-cat-2.jpg";
+                    audio1.play();
+                });
+
+            img.addEventListener('mouseup',
+                function () {
+                    img.src = "./assets/pictures/pop-cat-1.jpg";
+                    audio2.play();
+                });
+        
+    </script>
+</div>
+
+</body>
+</html>
